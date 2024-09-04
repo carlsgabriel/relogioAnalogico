@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -13,12 +14,14 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: #333;
-    font-family: 'Rokkitt';
+    font-family: 'Source Code Pro';
 }
 
 h1 {
-    color: #FFF;
+    color: #000;
     margin-bottom: 20px;
+    font-family: 'Montserrat';
+    font-weight: 500;
 }
 
 .relogio {
@@ -36,6 +39,7 @@ h1 {
     padding-top: 50%;
     margin-top: -3px;
 }
+
 .risco {
     width: 145px;
     height: 5px;
@@ -45,6 +49,7 @@ h1 {
     display: flex;
     justify-content: flex-end;
 }
+
 .risco .ponto {
     width: 15px;
     height: 100%;
@@ -58,6 +63,7 @@ h1 {
     padding-top: 50%;
     margin-top: -100%;
 }
+
 .p {
     transform-origin: left;
     transform: rotate(0deg);
@@ -68,18 +74,21 @@ h1 {
 .p_s {
     width: 100px;
     height: 3px;
-    background-color: #F00;
+    background-color: red;
 }
+
 .p_m {
     width: 120px;
     height: 7px;
     background-color: #FFF;
 }
+
 .p_h {
     width: 70px;
     height: 10px;
     background-color: #FFF;
 }
+
 .encaixe {
     width: 20px;
     height: 20px;
@@ -89,8 +98,10 @@ h1 {
     margin-top: -5px;
     margin-left: -5px;
 }
+
 .digital {
-    color: #FFF;
+    color: #000;
     font-size: 40px;
     margin-top: 20px;
+    font-weight: bold;
 }

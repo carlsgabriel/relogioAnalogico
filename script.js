@@ -3,6 +3,7 @@ let mostradorDigital = document.querySelector('.digital');
 let ponteiroSegundo = document.querySelector('.p_s');
 let ponteiroMinuto = document.querySelector('.p_m');
 let ponteiroHora = document.querySelector('.p_h');
+let body = document.querySelector('body');
 
 /*
 Função responsável por mostrar as horas na tela
@@ -13,6 +14,17 @@ function atualizarHora() {
     let segundoAtual = horarioAtual.getSeconds();
     let minutoAtual = horarioAtual.getMinutes();
     let horaAtual = horarioAtual.getHours();
+
+    //Manipular o background do body para que ele mude de acordo com a hora.
+    if(horaAtual > 6 && horaAtual < 12){
+        body.style.background = 'linear-gradient(to bottom,#87CEEB,#B0E0E6)';
+    } else if (horaAtual < 18){
+        body.style.background = 'linear-gradient(to bottom, #87CEFA, #FFB6C1, #FF8C00);';
+    } else {
+        body.style.background = 'linear-gradient(to bottom, #000033, #000000)';
+        document.querySelector('h1').style.color = '#FFF';
+        document.querySelector('.digital').style.color = '#FFF';
+    }
 
     //Adicionando as horas, minutos e segundo no mostrador digital.
     mostradorDigital.innerHTML = `${adicionarZero(horaAtual)}:${adicionarZero(minutoAtual)}:${adicionarZero(segundoAtual)}`;
@@ -28,8 +40,9 @@ function atualizarHora() {
     tem que ser inserido o "-90" porque a posição 0deg no rotate() fica no ponteiro das 3 horas no relógio, quando você usa o -90 ele vai pro 12 certinho.
 
     segundosEmGraus na verdade está contando os milisegundos.
+    6/1000 porque um segundo tem 1000 milisegundos.
     */
-    let segundosEmGraus = (6 * segundoAtual) + (milisegundoAtual * (6 / 1000)) - 90;
+    let segundosEmGraus = ((6 * segundoAtual) + (milisegundoAtual * (6 / 1000)) - 90) - 1;
     let minutosEmGraus = (6 * minutoAtual) - 90;
     let horasEmGraus = (30 * horaAtual) - 90;
     ponteiroSegundo.style.transform = `rotate(${segundosEmGraus}deg)`;
